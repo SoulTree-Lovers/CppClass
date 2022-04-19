@@ -26,6 +26,8 @@ public:
     //Postcondition: One year of simple interest has been added to the account.
     void input( );
     void output( ) const;
+
+    // Accessor (getter) 메소드는 멤버 변수를 바꾸지 않으므로 뒤에 const 입력.
     double getBalance( ) const;
     int getDollars( ) const;
     int getCents( ) const;

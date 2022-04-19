@@ -3,6 +3,7 @@ using namespace std;
 
 class Server
 {
+    /* static은 안 쓰면 안 쓸 수록 좋다. */
 public:
     Server(char letterName);
     static int getTurn( );

@@ -15,8 +15,12 @@ class BankAccount
     void input( );
     void output( ) const;
 
-    double getBalance( ) const { return (accountDollars + accountCents*0.01);}
-   
+    /* Inline Functions */
+    
+    /* inline function은 함수의 정의가 짧을 때 사용하는게 효율적이다. (길면 비효율적 - 컴파일러가 무시하고 inline 제거) */
+    inline double getBalance( ) const { return (accountDollars + accountCents*0.01);}
+    
+    /* 아래 3개의 코드처럼 return값을 정의하면 컴파일러가 자동으로 inline으로 인식한다. */
     int getDollars( ) const { return accountDollars; }
 
     int getCents( ) const { return accountCents; }
