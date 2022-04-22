@@ -7,10 +7,13 @@ using namespace std;
 class Money
 {
 public:
+    /* constructor */
     Money( );
     Money(double amount);
     Money(int theDollars, int theCents);
     Money(int theDollars);
+
+
     double getAmount( ) const;
     int getDollars( ) const;
     int getCents( ) const;
@@ -25,12 +28,16 @@ private:
     int round(double number) const;
 };
 
+/* +, -, == operator overload */
+
 const Money operator +(const Money& amount1, const Money& amount2);
 
+/* a - b : binary operator (피연산자가 2개 필요) */
 const Money operator -(const Money& amount1, const Money& amount2);
 
 bool operator ==(const Money& amount1, const Money& amount2);
 
+/* -a : unary operator (피연산자가 1개만 필요) */
 const Money operator -(const Money& amount);
 
 int main( )

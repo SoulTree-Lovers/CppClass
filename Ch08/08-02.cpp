@@ -16,6 +16,7 @@ public:
     int getCents( ) const;
     void input( ); //Reads the dollar sign as well as the amount number.
     void output( ) const;
+    /* function 끝의 const 사용 의미 : 함수 내에서 class의 멤버 변수를 변경 불가 */
     const Money operator +(const Money& amount2) const;
     const Money operator -(const Money& amount2) const;
     bool operator ==(const Money& amount2) const;
@@ -47,6 +48,7 @@ int main( )
     else
         cout << "One of us is richer.\n";
 
+    /* yourAmount + myAmount = yourAmount.+(myAmount) */
     Money ourAmount = yourAmount + myAmount;
     yourAmount.output( ); cout << " + "; myAmount.output( ); 
     cout << " equals "; ourAmount.output( ); cout << endl;
