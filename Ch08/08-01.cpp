@@ -43,6 +43,10 @@ const Money operator -(const Money& amount);
 int main( )
 {
     Money yourAmount, myAmount(10, 9);
+    Money newAmount = myAmount + 25;    // -> myAmount.+(25) 을 myAmount.+(Money(25))로 바꿔서 실행시킴.
+    // Money newAmount2 = 25 + myAmount; // error 발생 : 25.+(myAmount)인데, 25는 Money의 객체가 아니므로 에러 발생.
+
+
     cout << "Enter an amount of money: ";
     yourAmount.input( );
 
@@ -65,6 +69,10 @@ int main( )
     Money diffAmount = yourAmount - myAmount;
     yourAmount.output( ); cout << " - "; myAmount.output( ); 
     cout << " equals "; diffAmount.output( ); cout << endl;
+
+    cout << "newAmount: ";
+    newAmount.output();
+    cout << endl;
 
     return 0;
 }

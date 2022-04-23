@@ -16,6 +16,11 @@ public:
     int getCents( ) const;
     void input( ); //Reads the dollar sign as well as the amount number.
     void output( ) const;
+    
+    /*  1) non member function이다.
+        2) class에서 friend function으로 선언. 
+        3) class에서 friend function으로 선언하면, class에 있는 private member variable을 직접 사용 가능.*/
+
     friend const Money operator +(const Money& amount1, const Money& amount2);
     friend const Money operator -(const Money& amount1, const Money& amount2);
     friend bool operator ==(const Money& amount1, const Money& amount2);
@@ -33,6 +38,11 @@ private:
 int main( )
 {
     Money yourAmount, myAmount(10, 9);
+
+    /* friend function을 사용하면 아래 두 가지 경우 모두 사용 가능.*/
+    Money newAmount = myAmount + 25;
+    Money newAmount2 = 25 + myAmount;
+
     cout << "Enter an amount of money: ";
     yourAmount.input( );
 
@@ -61,7 +71,10 @@ int main( )
 
 
 const Money operator +(const Money& amount1, const Money& amount2)
-{
+{   
+    // 원래 member function이 아니라면 accessor를 통해 멤버 변수에 접근하지만,
+    // friend function을 사용하면 그냥 변수 이름으로 접근이 가능하다.
+
     int allCents1 = amount1.cents + amount1.dollars*100;
     int allCents2 = amount2.cents + amount2.dollars*100;
     int sumAllCents = allCents1 + allCents2;
