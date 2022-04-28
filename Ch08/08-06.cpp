@@ -7,7 +7,7 @@ class IntPair
 public:
     IntPair(int firstValue, int secondValue);
     IntPair operator++( ); //Prefix version
-    IntPair operator++(int); //Postfix version
+    IntPair operator++(int); //Postfix version (파라미터가 필요하지 않지만, prefix랑 함수가 겹치기 때문에 임의로 int를 써놓기로 약속한 것.)
     void setFirst(int newValue);
     void setSecond(int newValue);
     int getFirst( ) const;
