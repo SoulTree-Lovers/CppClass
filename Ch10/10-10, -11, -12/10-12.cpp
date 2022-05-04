@@ -135,8 +135,8 @@ PFArrayD& PFArrayD::operator =(const PFArrayD& rightSide)
         a = new double[rightSide.capacity];
     }
 
-    capacity = rightSide.capacity;
-    used = rightSide.used;
+    this->capacity = rightSide.capacity;
+    this->used = rightSide.used;
     for (int i = 0; i < used; i++)
         a[i] = rightSide.a[i];
 
