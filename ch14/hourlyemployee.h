@@ -10,7 +10,7 @@ using std::string;
 
 namespace SavitchEmployees
 {
-
+    // HourlyEmployee : child class
     class HourlyEmployee : public Employee
     {
     public:

@@ -1,10 +1,11 @@
-//This is the file: hourlyemployee.cpp
-//This is the implementation for the class HourlyEmployee.
-//The interface for the class HourlyEmployee is in
-//the header file hourlyemployee.h.
 #include <string>
 #include <iostream>
+#include "univhourlyemployee.h"
 #include "hourlyemployee.h"
+#include "hourlyemployee.cpp"
+#include "employee.h"
+#include "employee.cpp"
+
 using std::string;
 using std::cout;
 using std::endl;
@@ -12,41 +13,51 @@ using std::endl;
 namespace SavitchEmployees
 {
 
-    HourlyEmployee::HourlyEmployee( ) : Employee( ), wageRate(0), hours(0)
+    UnivHourlyEmployee::UnivHourlyEmployee( ) : HourlyEmployee( ), wageRate(0), hours(0)
     {
         //deliberately empty
     }
 
-    HourlyEmployee::HourlyEmployee(const string&  theName, const string&  theNumber, double theWageRate, double theHours)
-        : Employee(theName, theNumber), wageRate(theWageRate), hours(theHours)
+    UnivHourlyEmployee::UnivHourlyEmployee(const string&  theName, const string&  theSsn, const string& affliation ,double theWageRate, double theHours)
+        : HourlyEmployee(theName, theSsn, theWageRate, theHours), univName(affliation)
     {
         //deliberately empty
     }
-
-    void HourlyEmployee::setRate(double newWageRate)
+    
+    void UnivHourlyEmployee::setRate(double newWageRate)
     {
         wageRate = newWageRate;
     }
 
-    double HourlyEmployee::getRate( ) const
+    double UnivHourlyEmployee::getRate( ) const
     {
         return wageRate;
     }
 
-    void HourlyEmployee::setHours(double hoursWorked)
+    void UnivHourlyEmployee::setHours(double hoursWorked)
     {
         hours = hoursWorked;
     }
 
-    double HourlyEmployee::getHours( ) const
+    double UnivHourlyEmployee::getHours( ) const
     {
         return hours;
     }
-
-    void HourlyEmployee::printCheck( )
+    
+    string UnivHourlyEmployee::getUnivName( )
+    {
+        return univName;
+    } 
+    
+    void UnivHourlyEmployee::setUnivName(string newUnivName)
+    {
+        univName = newUnivName;
+    }
+    
+    void UnivHourlyEmployee::printInfo( )
     {
         setNetPay(hours * wageRate);
-
+        cout << "Employee name:" << getName() << ", " << getUnivName() ;
         cout << "\n________________________________________________\n";
         cout << "Pay to the order of " << getName( ) << endl;
         cout << "The sum of " << getNetPay( ) << " Dollars\n";
@@ -60,7 +71,3 @@ namespace SavitchEmployees
 
 
 }//SavitchEmployees
-
-
-
-

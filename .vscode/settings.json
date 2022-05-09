@@ -3,6 +3,9 @@
         "iostream": "cpp",
         "ostream": "cpp",
         "cmath": "cpp",
-        "iosfwd": "cpp"
-    }
+        "iosfwd": "cpp",
+        "string": "cpp",
+        "new": "cpp"
+    },
+    "C_Cpp.dimInactiveRegions": false
 }
