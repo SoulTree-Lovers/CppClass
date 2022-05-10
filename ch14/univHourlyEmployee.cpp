@@ -13,7 +13,7 @@ using std::endl;
 namespace SavitchEmployees
 {
 
-    UnivHourlyEmployee::UnivHourlyEmployee( ) : HourlyEmployee( ), wageRate(0), hours(0)
+    UnivHourlyEmployee::UnivHourlyEmployee( ) : HourlyEmployee( ) , univName("None")
     {
         //deliberately empty
     }
@@ -22,26 +22,6 @@ namespace SavitchEmployees
         : HourlyEmployee(theName, theSsn, theWageRate, theHours), univName(affliation)
     {
         //deliberately empty
-    }
-    
-    void UnivHourlyEmployee::setRate(double newWageRate)
-    {
-        wageRate = newWageRate;
-    }
-
-    double UnivHourlyEmployee::getRate( ) const
-    {
-        return wageRate;
-    }
-
-    void UnivHourlyEmployee::setHours(double hoursWorked)
-    {
-        hours = hoursWorked;
-    }
-
-    double UnivHourlyEmployee::getHours( ) const
-    {
-        return hours;
     }
     
     string UnivHourlyEmployee::getUnivName( )
@@ -56,17 +36,18 @@ namespace SavitchEmployees
     
     void UnivHourlyEmployee::printInfo( )
     {
-        setNetPay(hours * wageRate);
+        setNetPay(getHours() * getRate());
+
         cout << "Employee name:" << getName() << ", " << getUnivName() ;
-        cout << "\n________________________________________________\n";
+        cout << "\n-----------------------------------------------\n";
         cout << "Pay to the order of " << getName( ) << endl;
         cout << "The sum of " << getNetPay( ) << " Dollars\n";
-        cout << "________________________________________________\n";
+        cout << "-----------------------------------------------\n";
         cout << "Check Stub: NOT NEGOTIABLE\n";
         cout << "Employee Number: " << getSsn( ) << endl;
-        cout << "Hourly Employee. \nHours worked: " << hours
-             << " Rate: " << wageRate << " Pay: " << getNetPay( ) << endl;
-        cout << "_________________________________________________\n";
+        cout << "Hourly Employee. \nHours worked: " << getHours()
+             << " Rate: " << getRate() << " Pay: " << getNetPay( ) << endl;
+        cout << "-----------------------------------------------\n";
     }
 
 
