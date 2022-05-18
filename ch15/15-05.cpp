@@ -1,7 +1,9 @@
 //Demonstrates the performance of the virtual function bill.
 #include <iostream>
 #include "sale.h" //Not really needed, but safe due to ifndef.
+#include "sale.cpp"
 #include "discountsale.h"
+#include "discountsale.cpp"
 using std::cout;
 using std::endl;
 using std::ios;
