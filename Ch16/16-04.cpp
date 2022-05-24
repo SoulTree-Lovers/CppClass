@@ -37,12 +37,21 @@ T Pair<T>::getFirst( ) const
     return first;
 }
 
+template<class T>
+T addUp(const Pair<T>& p1);
+
+
 int main( )
 {
     Pair<char> p('A', 'B');
     cout << "First is " << p.getFirst( ) << endl;
     p.setFirst('Z');
     cout << "First changed to " << p.getFirst( ) << endl;
- 
+    
+    Pair<int> x(1, 2);
+    cout << "First is " << x.getFirst() << endl;
+    x.setFirst(100);
+    cout << "First changed to " << x.getFirst() << endl;
+
     return 0;
 }

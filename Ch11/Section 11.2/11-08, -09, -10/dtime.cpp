@@ -9,6 +9,15 @@ using std::cout;
 using std::cin;
 #include "dtime.h"
 
+// namespace 다음에 이름이 없는 경우를 unnamed namespace라고 함
+// 1. digitToInt() 함수 등은 DigitalTime class와 무관하게 함수로 선언됨
+// 2. readMinute() 함수 등은 DigitalTime class에서 직접 사용 가능
+//    -> 마치 DigitalTime class의 private으로 선언된 함수와 같은 효과를 냄
+// 3. 모든 compilation unit file은 1개의 unnamed namespace를 가질 수 있음
+
+// unnamed namespace를 사용하는 가장 큰 목적
+// -> class 안에서 private function으로 사용할 함수를 unnamed namespace에 선언하여 사용하는 것을 권장
+// -> 
 namespace
 {
     int digitToInt(char c)

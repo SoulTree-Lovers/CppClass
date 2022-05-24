@@ -36,7 +36,7 @@ namespace SavitchEmployees
         return netPay;
     }
 
-   void Employee::setName(const string& newName)
+    void Employee::setName(const string& newName)
     {
         name = newName;
     }

@@ -5,6 +5,8 @@ using std::endl;
 
 //Interchanges the values of variable1 and variable2.
 //The assignment operator must work for the type T.
+
+// template을 사용하면 컴파일러가 자동으로 int형, double형 등을 바꾸어서 실행시킴.
 template<class T>
 void swapValues(T& variable1, T& variable2)
 {
