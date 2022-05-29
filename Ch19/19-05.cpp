@@ -4,7 +4,7 @@
 using std::cout;
 using std::endl;
 using std::list;
-using std::list<int>::iterator;
+//using std::list<int>::iterator;
 
 int main( )
 {
@@ -14,7 +14,7 @@ int main( )
         listObject.push_back(i);
 
     cout << "List contains:\n";
-    iterator iter;
+    list<int>::iterator iter;
     for (iter = listObject.begin( ); iter != listObject.end( ); iter++)
         cout << *iter << " ";
     cout << endl;

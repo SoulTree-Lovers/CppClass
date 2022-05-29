@@ -8,6 +8,7 @@
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
+				"-std=c++11",	// c++ compiler 11 version을 사용하여 컴파일하라는 option
 				"${file}",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe"

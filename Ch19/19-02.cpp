@@ -3,8 +3,8 @@
 #include <vector>
 using std::cout;
 using std::endl;
-using std::vector;
-using std::vector<char>::iterator;
+using std::vector;  // mutable iterator 
+//using std::vector<char>::iterator;
 
 int main( )
 {
@@ -19,7 +19,7 @@ int main( )
         cout << "container[" << i << "] == " 
              << container[i] << endl;
 
-    iterator p = container.begin( );
+    vector<char>::iterator p = container.begin( );
     cout << "The third entry is " << container[2] << endl;
     cout << "The third entry is " << p[2] << endl;
     cout << "The third entry is " << *(p + 2) << endl;
