@@ -6,7 +6,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 using std::vector;
-using std::vector<char>::const_iterator;
+//using std::vector<char>::const_iterator;
 using std::find;
 
 int main( )
@@ -22,11 +22,11 @@ int main( )
         cin.get(next);
     }
 
-    const_iterator where;
+    vector<char>::const_iterator where;
     where = find(line.begin( ), line.end( ), 'e');
     //where is located at the first occurrence of 'e' in v.
 
-    const_iterator p;
+    vector<char>::const_iterator p;
     cout << "You entered the following before you entered your first e:\n";
     for (p = line.begin( ); p != where; p++)
         cout << *p;

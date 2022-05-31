@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <typeinfo>
 
 using namespace std;
 using std::vector;
@@ -69,7 +68,7 @@ void draw2figues(Figure& f1)
 int main()
 {
     std::vector<Figure*> figure;
-    vector<Figure*>::iterator point;
+    vector<Figure*>::const_iterator point;
 
     string type;
 
@@ -131,7 +130,7 @@ int main()
             //     cout << endl;
             // }
 
-            // 아래 코드는 왜 안 되는가..?
+            //아래 코드는 왜 안 되나?
             // for (point = figure.begin(); point != figure.end(); point++)
             // {
             //     point->draw();

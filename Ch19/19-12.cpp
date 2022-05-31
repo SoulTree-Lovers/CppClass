@@ -7,6 +7,7 @@ using std::set;
 
 int main( )
 {
+    // set의 특징 : 1. 정렬, 2. 중복 X, 3. key값이 곧 value
     set<char> s;
 
     s.insert('A');

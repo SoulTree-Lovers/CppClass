@@ -9,6 +9,7 @@ using std::string;
 
 int main( )
 {
+    // map의 특징 : 1. key를 통해 정렬, 2. key: iter->first / value: iter->second 로 가져온다.
     map<string, string> planets;
 
     planets["Mercury"] = "Hot planet";
